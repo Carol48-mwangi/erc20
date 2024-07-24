@@ -1,4 +1,4 @@
-# MyToken ERC20 Smart Contract
+# ERC20 Smart Contract
 
 This Solidity program is a simple "MyToken" contract that demonstrates the functionality of minting, burning, and transferring ERC20 tokens. The purpose of this program is to provide a foundational understanding of how ERC20 tokens can be manipulated within the Ethereum blockchain ecosystem.
 
