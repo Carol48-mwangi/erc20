@@ -16,26 +16,8 @@ To run this program, you can use Remix, an online Solidity IDE. Here's how to ge
 
 2. Once on the Remix website, create a new file by clicking on the "+" icon in the left-hand sidebar. Save the file with a `.sol` extension (e.g., `MyToken.sol`).
 
-3. Copy and paste the following code into the file:
+3. Copy and paste the code into the file:
 
-```solidity
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
-
-import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
-
-contract MyToken is ERC20Burnable {
-    constructor() ERC20("MyToken", "MTK") {
-        _mint(msg.sender, 1000 * 10 ** decimals()); // Minting initial supply to the deployer
-    }
-
-    function mint(address to, uint256 amount) public {
-        _mint(to, amount);
-    }
-
-    function transfer(address recipient, uint256 amount) public override returns (bool) {
-        return super.transfer(recipient, amount);
-    }
 
     function burn(uint256 amount) public override {
         super.burn(amount);
