@@ -16,10 +16,7 @@ To run this program, you can use Remix, an online Solidity IDE. Here's how to ge
 
 2. Once on the Remix website, create a new file by clicking on the "+" icon in the left-hand sidebar. Save the file with a `.sol` extension (e.g., `MyToken.sol`).
 
-3. Copy and paste the code into the file:
+3. Copy and paste the code into the file.
+4. Compile, deploy and interact.
 
 
-    function burn(uint256 amount) public override {
-        super.burn(amount);
-    }
-}
