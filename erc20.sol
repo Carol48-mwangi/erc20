@@ -2,13 +2,16 @@
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract MyToken is ERC20Burnable {
-    constructor() ERC20("PizzaToken", "PZT") {
+contract MyToken is ERC20Burnable, Ownable {
+     constructor() ERC20("PizzaToken", "PZT") Ownable(0x5B38Da6a701c568545dCfcB03FcB875f56beddC4) {
         _mint(msg.sender, 1000 * 10 ** decimals()); // Minting initial supply to the deployer
     }
 
-    function mint(address to, uint256 amount) public {
+
+    // Only the owner of the contract can mint new tokens
+    function mint(address to, uint256 amount) public onlyOwner {
         _mint(to, amount);
     }
 
@@ -20,4 +23,3 @@ contract MyToken is ERC20Burnable {
         super.burn(amount);
     }
 }
-
